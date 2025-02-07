@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  mat-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+  
+  mat-sidenav-container {
+    flex: 1;
+    margin-top: 64px; // Height of toolbar
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    padding-top: 16px;
+  }
+  
+  .content {
+    min-height: calc(100vh - 64px);
+  }
+  
+  @media (max-width: 768px) {
+    mat-sidenav {
+      width: 200px;
+    }
+    
+    mat-toolbar {
+      position: static;
+    }
+    
+    mat-sidenav-container {
+      margin-top: 0;
+    }
+  }

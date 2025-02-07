@@ -1,0 +1,27 @@
+<div *ngIf="employee">
+    <h2>{{ employee.name }}'s Profile</h2>
+  
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <!-- Name Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" [value]="employee.name" />
+      </mat-form-field>
+  
+      <!-- Email Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" [value]="employee.email" />
+      </mat-form-field>
+  
+      <!-- Department Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <input matInput formControlName="department" [value]="employee.department" />
+      </mat-form-field>
+  
+      <!-- Submit Button -->
+      <button mat-raised-button type="submit" [disabled]="profileForm.invalid">Update Profile</button>
+    </form>
+  </div>
+  
